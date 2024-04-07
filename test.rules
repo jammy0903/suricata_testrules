@@ -1,0 +1,30 @@
+
+alert tcp any any -> any 80 (msg:"gilgil.net access"; content:"GET /"; content:"Host: "; content:"gilgil.net"; sid:10001; rev:1;)
+alert tcp any any -> any 80 (msg:"netflix.com access"; content:"GET /"; content:"Host: "; content:"netflix.com"; sid:10002; rev:1;)
+alert tcp any any -> any 80 (msg:"qt.io access"; content:"GET /"; content:"Host: "; content:"qt.io"; sid:10003; rev:1;)
+alert tcp any any -> any 80 (msg:"HTTP Google access"; content:"Host: www.google.com"; sid:10004; rev:1;)
+alert tcp any any -> any 80 (msg:"HTTP  Naver access"; content:"Host: www.naver.com"; sid:10005; rev:1;)
+
+
+# TLS Traffic for listed sites
+alert tls any any -> any 443 (msg:"TLS Google access"; tls.sni; content:"www.google.com"; sid:20001; rev:1;)
+alert tls any any -> any 443 (msg:"TLS Naver access"; tls.sni; content:"www.naver.com"; sid:20002; rev:1;)
+alert tls any any -> any 443 (msg:"TLS daum access"; tls.sni; content:"www.daum.net"; sid:20003; rev:1;)
+alert tls any any -> any 443 (msg:"TLS youtube access"; tls.sni; content:"www.youtube.com"; sid:20004; rev:1;)
+alert tls any any -> any 443 (msg:"TLS facebook access"; tls.sni; content:"www.facebook.com"; sid:20005; rev:1;)
+alert tls any any -> any 443 (msg:"TLS instagram access"; tls.sni; content:"www.instagram.com"; sid:20006; rev:1;)
+alert tls any any -> any 443 (msg:"TLS twitter access"; tls.sni; content:"twitter.com"; sid:20007; rev:1;)
+alert tls any any -> any 443 (msg:"TLS amazon access"; tls.sni; content:"www.amazon.com"; sid:20008; rev:1;)
+alert tls any any -> any 443 (msg:"TLS  appleaccess"; tls.sni; content:"www.apple.com"; sid:20009; rev:1;)
+alert tls any any -> any 443 (msg:"TLS  microsoft access"; tls.sni; content:"www.microsoft.com"; sid:20010; rev:1;)
+alert tls any any -> any 443 (msg:"TLS  samsung access"; tls.sni; content:"www.samsung.com/sec"; sid:20011; rev:1;)
+alert tls any any -> any 443 (msg:"TLS  hyundai access"; tls.sni; content:"www.hyundai.com/kr"; sid:20012; rev:1;)
+alert tls any any -> any 443 (msg:"TLS  lg access"; tls.sni; content:"www.lg.com/kr"; sid:20013; rev:1;)
+alert tls any any -> any 443 (msg:"TLS kakao access"; tls.sni; content:"www.kakao.com"; sid:20014; rev:1;)
+alert tls any any -> any 443 (msg:"TLS naver news access"; tls.sni; content:"news.naver.com"; sid:20015; rev:1;)
+alert tls any any -> any 443 (msg:"TLS daum news access"; tls.sni; content:"news.daum.net"; sid:20016; rev:1;)
+alert tls any any -> any 443 (msg:"TLS hankyung access"; tls.sni; content:"www.hankyung.com"; sid:20017; rev:1;)
+alert tls any any -> any 443 (msg:"TLS yna access"; tls.sni; content:"www.yna.co.kr"; sid:20018; rev:1;)
+alert tls any any -> any 443 (msg:"TLS mt access"; tls.sni; content:"www.mt.co.kr"; sid:20019; rev:1;)
+alert tls any any -> any 443 (msg:"TLS inflearn access"; tls.sni; content:"www.inflearn.com"; sid:20020; rev:1;)
+
